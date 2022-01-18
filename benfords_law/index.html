@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Benford's Law</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.js"
+    integrity="sha512-YxkN22rlXL1kQXIh4Py4u7O6BrxxuR0yKcnT3myFJGdibXfoSHPFBs9ap8Xowi25YRwHv38DoLf2T6nAc5w/Cw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="results">
+      <span id="results-content-digits" class="clear-this"></span>
+      <span id="results-content-percentages" class="clear-this"></span>
+    </div>
+    <div id="chart-wrapper">
+      <h2>Testing Benford's Law</h2>
+      <div id="myChart"></div>
+      <div id="chart-footer">
+        <div id="upload-csv-form">
+          <span class="file-upload">
+            <input type="file" name="upload-csv" id="upload-csv" accept=".csv" onchange="fileUploaded();" />
+            <label for="upload-csv">Select .csv file</label>
+          </span>
+          <button id="clear-data" onclick="clearData();">Clear data</button>
+        </div>
+        <div id="results-summary">
+          <p>Number of results:
+            <span id="results-length" class="clear-this"></span>
+          </p>
+          <p>Differential:
+            <span id="results-differential" class="clear-this"></span>
+          </p>
+          <p>Conclusion:
+            <span id="results-conclusion">The data
+              <span id="results-conclusion-support" class="clear-this"></span>
+              Benford's Law</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="loader">
+      <span class="loader-text">Parsing .csv
+        <span class="loading"></span>
+      </span>
+    </div>
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
